@@ -20,13 +20,13 @@ namespace RocketRegions.Commands
         public override AllowedCaller AllowedCaller => AllowedCaller.Both;
 
         public override List<string> Aliases => new List<string> { "regionsowner" };
-        
+
         public override List<string> Permissions => new List<string>() { "regions.command.owner" };
-        
+
         public override string Name => "rowner";
-        
+
         public override string Help => "Add or remove owners from a region";
-        
+
         #endregion
     }
 }

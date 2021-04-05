@@ -37,7 +37,7 @@ namespace RocketRegions.Commands
 
             UnturnedChat.Say(caller, "Successfully removed region: " + name, Color.green);
         }
-        
+
         #region Properties
 
         public string Name => "regionremove";
@@ -51,7 +51,7 @@ namespace RocketRegions.Commands
         public List<string> Permissions => new List<string> { "regions.command.remove" };
 
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
-        
+
         #endregion
     }
 }

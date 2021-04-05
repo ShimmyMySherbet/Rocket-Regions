@@ -53,7 +53,7 @@ namespace RocketRegions.Commands
         }
 
         #region Properties
-        
+
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
 
         public string Name => "regionredefine";
@@ -65,7 +65,7 @@ namespace RocketRegions.Commands
         public List<string> Aliases => new List<string> { "rredefine" };
 
         public List<string> Permissions => new List<string> { "regions.command.redefine" };
-        
+
         #endregion
     }
 }

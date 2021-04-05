@@ -31,7 +31,7 @@ namespace RocketRegions.Commands
                 RectangleType.SetPosition2(caller, pos);
             }
         }
-        
+
         #region Properties
 
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
@@ -45,7 +45,7 @@ namespace RocketRegions.Commands
         public List<string> Aliases => new List<string> { "rpos" };
 
         public List<string> Permissions => new List<string> { "regions.command.pos" };
-        
+
         #endregion
     }
 }

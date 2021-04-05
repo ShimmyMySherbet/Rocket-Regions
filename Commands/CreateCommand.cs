@@ -49,7 +49,7 @@ namespace RocketRegions.Commands
             var args = new ArrayList(command);
             args.RemoveAt(0); // remove name...
             args.RemoveAt(0); // remove type...
-            var region = type.OnCreate(caller, name, (string[]) args.ToArray(typeof(string)));
+            var region = type.OnCreate(caller, name, (string[])args.ToArray(typeof(string)));
 
             if (region == null)
             {
@@ -66,9 +66,9 @@ namespace RocketRegions.Commands
             RegionsPlugin.Instance.Configuration.Save();
             UnturnedChat.Say(caller, "Successfully created region: " + name, Color.green);
         }
-        
+
         #region Properties
-        
+
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
 
         public string Name => "regioncreate";
@@ -80,7 +80,7 @@ namespace RocketRegions.Commands
         public List<string> Aliases => new List<string> { "rcreate" };
 
         public List<string> Permissions => new List<string> { "regions.command.create" };
-        
+
         #endregion
     }
 }

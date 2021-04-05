@@ -67,35 +67,35 @@ namespace RocketRegions.Commands
                     }
 
                 case "list":
-                {
-                    var list = GetList(region);
-                    if (list.Count == 0)
                     {
-                        UnturnedChat.Say(caller, "No players found", Color.red);
-                        return;
-                    }
-
-                    foreach (ulong id in list)
-                    {
-                        UnturnedPlayer player = null;
-                        try
+                        var list = GetList(region);
+                        if (list.Count == 0)
                         {
-                            player = UnturnedPlayer.FromCSteamID(new CSteamID(id));
-                            if (player?.Player == null)
-                                player = null;
+                            UnturnedChat.Say(caller, "No players found", Color.red);
+                            return;
                         }
-                        catch (Exception) { }
 
-                        if (player != null)
+                        foreach (ulong id in list)
                         {
-                            UnturnedChat.Say(caller, "* " + player.DisplayName);
-                            continue;
-                        }
-                        UnturnedChat.Say(caller, "* " + id);
-                    }
+                            UnturnedPlayer player = null;
+                            try
+                            {
+                                player = UnturnedPlayer.FromCSteamID(new CSteamID(id));
+                                if (player?.Player == null)
+                                    player = null;
+                            }
+                            catch (Exception) { }
 
-                    break;
-                }
+                            if (player != null)
+                            {
+                                UnturnedChat.Say(caller, "* " + player.DisplayName);
+                                continue;
+                            }
+                            UnturnedChat.Say(caller, "* " + id);
+                        }
+
+                        break;
+                    }
 
                 default:
                     this.SendUsage(caller);
@@ -127,21 +127,21 @@ namespace RocketRegions.Commands
             name = val.ToString();
             return new CSteamID(val);
         }
-        
+
         #region Properties
 
         public abstract AllowedCaller AllowedCaller { get; }
-        
+
         public abstract string Name { get; }
-        
+
         public abstract string Help { get; }
-        
+
         public string Syntax => "<add/remove/list> <region> <name/SteamID>";
-        
+
         public abstract List<string> Aliases { get; }
-        
+
         public abstract List<string> Permissions { get; }
-     
+
         #endregion
     }
 }

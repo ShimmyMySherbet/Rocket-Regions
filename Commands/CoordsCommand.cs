@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using Rocket.API;
 using Rocket.Unturned.Chat;
 using RocketRegions.Util;
@@ -13,6 +14,7 @@ namespace RocketRegions.Commands
             var player = PlayerUtil.GetUnturnedPlayer(caller);
             var pos = player.Position;
             UnturnedChat.Say(caller, $"Position: X: {pos.x}, Y: {pos.y}, Z: {pos.z}; + Rotation: {player.Player.transform.rotation.eulerAngles.y}", Color.green);
+            UnturnedChat.Say(caller, "");
             //UnturnedChat.Say(caller, $"Position: X: {pos.x}, Y: {pos.y}, Z: {pos.z}; + Rotation: {player.Player.transform.rotation.eulerAngles.y}", Color.green);
         }
         
@@ -29,7 +31,6 @@ namespace RocketRegions.Commands
         public List<string> Permissions => new List<string> { "regions.command.coords" };
 
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
-        
         #endregion
     }
 }

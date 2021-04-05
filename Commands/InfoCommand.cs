@@ -14,9 +14,9 @@ namespace RocketRegions.Commands
             UnturnedChat.Say(caller, "Copyright © 2015-2017 Trojaner", Color.cyan);
             UnturnedChat.Say(caller, "Source code available under http://github.com/Trojaner25/Rocket-Regions", Color.cyan);
         }
-        
+
         #region Properties
-        
+
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
 
         public string Name => "regionsinfo";
@@ -27,8 +27,8 @@ namespace RocketRegions.Commands
 
         public List<string> Aliases => new List<string> { "rinfo" };
 
-        public List<string> Permissions => new List<string>{"regions.command.info"};
-        
+        public List<string> Permissions => new List<string> { "regions.command.info" };
+
         #endregion
     }
 }

@@ -34,7 +34,7 @@ namespace RocketRegions.Model.Flag.Impl
                     !GetValueSafe(Region.GetGroup(player))) continue;
 
                 veh.forceRemovePlayer(out byte seat, PlayerUtil.GetCSteamId(player), out Vector3  point, out byte angle);
-                VehicleManager.instance.channel.send("tellExitVehicle", ESteamCall.ALL, ESteamPacket.UPDATE_RELIABLE_BUFFER, veh.instanceID, seat, point, angle, true);
+                VehicleManager.sendExitVehicle(veh, seat, point, angle, true);
             }
         }
 

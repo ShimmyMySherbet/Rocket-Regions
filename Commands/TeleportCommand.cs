@@ -19,7 +19,7 @@ namespace RocketRegions.Commands
                 return;
             }
 
-            var player = (UnturnedPlayer) caller;
+            var player = (UnturnedPlayer)caller;
             if (command.Length > 1)
             {
                 string playerName = command.GetStringParameter(1);
@@ -57,7 +57,7 @@ namespace RocketRegions.Commands
             UnturnedChat.Say(caller, "Teleporting...", Color.green);
             player.Teleport(pos, player.Rotation);
         }
-        
+
         #region Properties
 
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
@@ -68,9 +68,9 @@ namespace RocketRegions.Commands
 
         public string Syntax => "<region> [player]";
 
-        public List<string> Aliases => new List<string> {"rteleport"};
+        public List<string> Aliases => new List<string> { "rteleport" };
 
-        public List<string> Permissions => new List<string> {"regions.command.teleport"};
+        public List<string> Permissions => new List<string> { "regions.command.teleport" };
 
         #endregion Properties
     }

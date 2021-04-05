@@ -21,7 +21,7 @@ namespace RocketRegions.Util
         {
             if (player == null) return CSteamID.Nil;
             //for some reason one of the fiels below can be null
-            var steamPlayerId= GetUnturnedPlayer(player)?.Player?.channel?.owner?.playerID;
+            var steamPlayerId = GetUnturnedPlayer(player)?.Player?.channel?.owner?.playerID;
             return steamPlayerId?.steamID ?? CSteamID.Nil;
         }
 
@@ -38,6 +38,6 @@ namespace RocketRegions.Util
             return id.m_SteamID;
         }
 
-        public static void OpenUrl(UnturnedPlayer player, string msg, string url) => player.Player.channel.send("askBrowserRequest", player.CSteamID, ESteamPacket.UPDATE_RELIABLE_BUFFER, msg, url);
+        public static void OpenUrl(UnturnedPlayer player, string msg, string url) => player.Player.sendBrowserRequest(msg, url);
     }
 }

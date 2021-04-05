@@ -8,7 +8,7 @@ namespace RocketRegions.Commands
 {
     public class ListCommand : IRocketCommand
     {
-        public void Execute(IRocketPlayer  caller, string[] command)
+        public void Execute(IRocketPlayer caller, string[] command)
         {
             UnturnedChat.Say(caller, "Regions:", Color.green);
 
@@ -24,7 +24,7 @@ namespace RocketRegions.Commands
         }
 
         #region Properties
-        
+
         public AllowedCaller AllowedCaller => AllowedCaller.Player;
 
         public string Name => "regionlist";
@@ -36,7 +36,7 @@ namespace RocketRegions.Commands
         public List<string> Aliases => new List<string> { "rlist" };
 
         public List<string> Permissions => new List<string> { "regions.command.list" };
-        
+
         #endregion
     }
 }

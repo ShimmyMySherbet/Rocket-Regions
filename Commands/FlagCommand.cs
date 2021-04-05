@@ -115,7 +115,7 @@ namespace RocketRegions.Commands
                 string msg = $"Flag has been set to: {shownValue}";
                 if (f.SupportsGroups)
                     msg += $" for group {group}!";
-                UnturnedChat.Say(caller,  msg, Color.green);
+                UnturnedChat.Say(caller, msg, Color.green);
             }
 
             RegionsPlugin.Instance.Configuration.Save();
@@ -125,7 +125,7 @@ namespace RocketRegions.Commands
         {
             public Group Group { get; set; }
         }
-        
+
         #region Properties
 
         public AllowedCaller AllowedCaller => AllowedCaller.Both;
@@ -139,7 +139,7 @@ namespace RocketRegions.Commands
         public List<string> Aliases => new List<string> { "rflag" };
 
         public List<string> Permissions => new List<string> { "regions.command.flag" };
-        
+
         #endregion
     }
 }
